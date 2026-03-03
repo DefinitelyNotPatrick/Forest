@@ -136,7 +136,7 @@ body {
   }
 }
 
-@media (min-width: 765px) {
+@media (min-width: 979px) {
   .nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -153,6 +153,7 @@ body {
     a {
       font-size: 1.5rem;
       text-transform: none;
+      white-space: nowrap;
     }
     &__logo {
       display: block;
