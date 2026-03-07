@@ -66,6 +66,7 @@ body {
     gap: 1rem;
 
     &-item a {
+      position: relative;
       display: block;
       padding: 0.5rem;
       text-decoration: none;
@@ -74,9 +75,24 @@ body {
       text-transform: uppercase;
       transition: opacity 0.2s ease;
 
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary-color);
+        transition: width 0.3s ease;
+      }
       &:hover,
       &:focus-visible {
         opacity: 0.6;
+
+        &::before {
+          width: 100%;
+        }
       }
     }
   }
