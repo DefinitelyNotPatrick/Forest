@@ -13,7 +13,7 @@
 body {
   font-family: "Google Sans Flex", sans-serif;
   background-color: var(--bg-color);
-
+  min-height: 100vh;
   &.no-scroll {
     overflow: hidden;
   }
@@ -88,8 +88,6 @@ body {
       }
       &:hover,
       &:focus-visible {
-        opacity: 0.6;
-
         &::before {
           width: 100%;
         }
@@ -152,6 +150,50 @@ body {
   }
 }
 
+// HEADER
+.header {
+  width: 100%;
+  height: 25rem;
+  &__image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background-image: url("/dist/img/hero_mobile.jpg");
+    background-size: cover;
+    background-position: center;
+
+    &__background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.716);
+    }
+
+    &--text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--secondary-color);
+      z-index: 2;
+      padding: 1rem;
+
+      &-title {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+      &-subtitle {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+
+// MEDIA QUERIES
+
 @media (min-width: 979px) {
   .nav {
     display: grid;
@@ -200,5 +242,10 @@ body {
     &__hamburger {
       display: none;
     }
+  }
+
+  // HEADER
+  .header {
+    margin-top: 5rem;
   }
 }
