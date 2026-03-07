@@ -167,7 +167,7 @@ body {
     height: 100%;
     background-image: url("/dist/img/hero_mobile.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: center 60%;
 
     &__background {
       position: absolute;
@@ -205,7 +205,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     position: fixed;
-    padding: 0 6rem;
+    padding: 0 9rem;
     top: 0;
     left: 0;
     right: 0;
@@ -252,7 +252,7 @@ body {
 
   // HEADER
   .header {
-    height: 22rem;
+    height: 28rem;
     margin-top: 5rem;
 
     &__image {
@@ -261,10 +261,15 @@ body {
       &--text {
         justify-content: center;
         align-items: flex-start;
-        left: 6rem;
+        left: 9rem;
+        white-space: inherit;
 
+        &-title {
+          font-size: 1.5rem;
+          font-weight: 200;
+        }
         &-subtitle {
-          font-size: 2rem;
+          font-size: 2.6rem;
         }
       }
     }
