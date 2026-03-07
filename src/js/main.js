@@ -37,3 +37,25 @@ if (burgerBtn && nav && overlay) {
     link.addEventListener('click', closeMenu);
   });
 }
+
+const updateHamburgerColor = () => {
+  if (window.getComputedStyle(burgerBtn).display === 'none') return;
+
+  const rect = burgerBtn.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  burgerBtn.style.visibility = 'hidden';
+  const elementBelow = document.elementFromPoint(centerX, centerY);
+  burgerBtn.style.visibility = '';
+
+  const bgColor = window.getComputedStyle(elementBelow).backgroundColor;
+  const isDark = bgColor.match(/\d+/g)?.slice(0, 3)
+    .reduce((sum, v) => sum + Number(v), 0) < 382;
+
+  burgerBtn.classList.toggle('nav__hamburger--light', isDark && !burgerBtn.classList.contains('is-active'));
+  updateHamburgerColor();
+};
+
+window.addEventListener('scroll', updateHamburgerColor, { passive: true });
+updateHamburgerColor();
